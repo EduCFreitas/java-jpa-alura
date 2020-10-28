@@ -14,6 +14,7 @@ public class Conta {
 	private Integer agencia;
 	private Integer numero;
 	private String titular;
+	private Double saldo;
 	
 	public Long getId() {
 		return id;
@@ -38,6 +39,12 @@ public class Conta {
 	}
 	public void setTitular(String titular) {
 		this.titular = titular;
+	}
+	public Double getSaldo() {
+		return saldo;
+	}
+	public void setSaldo(Double saldo) {
+		this.saldo = saldo;
 	}
 	
 }
