@@ -3,6 +3,7 @@ package br.com.alura.jpa.modelo;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -19,7 +20,9 @@ public class Conta {
 	private String titular;
 	private Double saldo;
 	
-	@OneToMany(mappedBy = "conta")
+	//mappedBy: ligação espelhada com entidade forte
+	//fetch: possibilita o carregamento antecipado da consulta
+	@OneToMany(mappedBy = "conta", fetch = FetchType.EAGER)
 	private List<Movimentacao> movimentacoes;
 	
 	public Long getId() {
