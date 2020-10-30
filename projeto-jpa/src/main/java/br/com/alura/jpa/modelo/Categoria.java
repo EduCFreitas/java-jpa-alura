@@ -14,7 +14,7 @@ public class Categoria {
 	private String nome;
 	
 	@Deprecated
-	private Categoria() {
+	public Categoria() {
 	}
 
 	public Categoria(String nome) {
@@ -33,6 +33,11 @@ public class Categoria {
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+	
+	@Override
+	public String toString() {
+		return this.nome + " - " + this.id;
 	}
 
 }
