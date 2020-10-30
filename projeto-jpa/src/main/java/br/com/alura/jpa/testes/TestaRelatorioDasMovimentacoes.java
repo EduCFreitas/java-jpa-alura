@@ -16,6 +16,7 @@ public class TestaRelatorioDasMovimentacoes {
 		EntityManager em = emf.createEntityManager();
 		
 		String jpql = "select distinct c from Conta c left join fetch c.movimentacoes"; //join fetch evita n+1
+		//distinct faz com que recebamos apenas resultados distintos, evitando duplicidade na esquerda (left)
 		TypedQuery<Conta> query = em.createQuery(jpql, Conta.class);
 		
 		List<Conta> contas = query.getResultList();
